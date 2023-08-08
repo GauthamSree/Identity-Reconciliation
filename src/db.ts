@@ -1,4 +1,4 @@
-import pg from 'pg';
+import pg from "pg";
 
 const pool = new pg.Pool({
   host: "localhost",
@@ -8,4 +8,10 @@ const pool = new pg.Pool({
   database: "reconciliation",
 });
 
-export default pool;
+export default {
+  query: async (text: string, params: any[]) => {
+    return await pool.query(text, params).catch((err) => {
+      throw err;
+    });
+  },
+};
