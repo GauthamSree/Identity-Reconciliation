@@ -1,14 +1,12 @@
-import express, {Request, Response } from 'express';
+import express from 'express';
+import identityRouter from './routes/identity.js';
 
 const app = express();
 const PORT: number = 3000;
 
-app.get('/', (req: Request, res: Response) => {
-    res.json({
-        "status": "Success",
-        "message": "Hello World! Kindly view the README.md"
-    })
-});
+app.use(express.json())
+app.use(identityRouter);
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
