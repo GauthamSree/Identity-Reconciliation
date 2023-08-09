@@ -11,8 +11,7 @@ A way to identify and keep track of a customer's identity across multiple purcha
 
 ## Installation (Easiest Way)
 
-- Go to Website
-
+- Using `ThunderClient/Postman` and using the URL: `https://identity-reconciliation-api.onrender.com/`
 
 ## Installation (locally)
 
