@@ -25,7 +25,29 @@ A way to identify and keep track of a customer's identity across multiple purcha
    ```
 
 
-2. Set up your Postgres database and update the db.js file with your database configuration.
+2. Set up your Postgres database and update the `.env` file with your database configuration.
+    ```SQL
+    TABLE Contact {
+	    id                   Int                   
+        phoneNumber          String?
+        email                String?
+        linkedId             Int? // the ID of another Contact linked to this one
+        linkPrecedence       "secondary"|"primary" // "primary" if its the first Contact in the link
+        createdAt            DateTime              
+        updatedAt            DateTime              
+        deletedAt            DateTime?
+    }
+
+    CREATE TABLE Contact ( 
+        id SERIAL PRIMARY KEY, 
+        phoneNumber VARCHAR(10), 
+        email VARCHAR (255), 
+        linkedId INT, 
+        linkPrecedence VARCHAR (25),
+        createdAt TIMESTAMP NOT NULL,
+        updatedAt TIMESTAMP NOT NULL,
+        deletedAt TIMESTAMP);
+    ```
 
 3. Build and run the TypeScript code:
     ```zsh

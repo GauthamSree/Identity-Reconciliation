@@ -1,12 +1,11 @@
 import pg from "pg";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const pool = new pg.Pool({
-  host: "localhost",
-  user: "postgres",
-  port: 5432,
-  password: "",
-  database: "reconciliation",
-});
+    connectionString: process.env.DB_CONNECTION,
+  });
 
 export default {
   query: async (text: string, params: any[]) => {
