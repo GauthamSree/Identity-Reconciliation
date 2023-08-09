@@ -67,6 +67,7 @@ A way to identify and keep track of a customer's identity across multiple purcha
 * `src/` - Contains the TypeScript source code.
 * `src/models/` - Contains the data models.
 * `src/routes/` - Contains the API routes.
+* `src/services/` - Contains the business logic.
 * `src/db.js` - Configuration for connecting to the database.
 * `package.json` - Project configuration and dependencies.
 * `tsconfig.json` - TypeScript compiler configuration.
